@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+  <div class="ui error message visible">
+    <i class="close icon"></i>
+    <div class="header">
+      The following errors prohibited
+    </div>
+    <ul class="list">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

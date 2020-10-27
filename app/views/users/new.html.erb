@@ -3,7 +3,10 @@
 </h1>
 <div class="ui grid">
   <div class="eight wide column">
-    <%= form_with model: @user, class: "ui form" do |f| %>
+    <%= form_with model: @user, class: "ui form", local: true do |f| %>
+      
+      <%= render "shared/errors" %>
+      
       <div class="field">
         <%= f.label :username %>
         <%= f.text_field :username, placeholder: "Username" %>
@@ -13,8 +16,8 @@
         <%= f.password_field :password, placeholder: "Password" %>
       </div>
       <div class="field">
-        <%= f.label :confirm_password %>
-        <%= f.password_field :confirm_password, placeholder: "Confirm Password" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
       </div>
       <%= f.submit "Submit", class: "ui red fluid button" %>
     <% end %>
