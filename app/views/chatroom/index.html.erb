@@ -8,34 +8,15 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui small feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Elliot Fu</em>: Hi friends
+          <% @messages.each do |msg| %>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em><%= msg.user.username %></em>: <%= msg.body %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Stevie Feliciano</em>: Whats good
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Helen Troy</em>: I like pizza for breakfast
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Christian Rocha</em>: Breakfast pizza??
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
       <div class="extra content">
