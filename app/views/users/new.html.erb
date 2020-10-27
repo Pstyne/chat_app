@@ -1,0 +1,28 @@
+<h1 class="ui center aligned header">
+  Sign up
+</h1>
+<div class="ui grid">
+  <div class="eight wide column">
+    <%= form_with model: @user, class: "ui form" do |f| %>
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username, placeholder: "Username" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+      <div class="field">
+        <%= f.label :confirm_password %>
+        <%= f.password_field :confirm_password, placeholder: "Confirm Password" %>
+      </div>
+      <%= f.submit "Submit", class: "ui red fluid button" %>
+    <% end %>
+  </div>
+  <div class="eight wide column">
+    <h2 class="ui center aligned icon header">
+      <i class="circular red coffee icon"></i>
+      Sign up for chattyness
+    </h2>
+  </div>
+</div>
