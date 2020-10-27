@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Successfully logged in"
       redirect_to root_path
     else
-      flash.now[:danger] = "Username or Password is not correct"
+      flash.now[:error] = "Username or Password is not correct"
       render 'new'
     end
   end
@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = "Successfully logged out"
-    redirect_to root_path
+    redirect_to login_path
   end
 end
