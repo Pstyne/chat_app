@@ -25,10 +25,12 @@
       </div>
     </div>
     <div class="middle aligned column">
-      <div class="ui red big button">
-        <i class="signup icon"></i>
-        Sign Up
-      </div>
+      <%= link_to signup_path, class: "item" do %>
+        <div class="ui red big button">
+          <i class="signup icon"></i>
+          Sign Up
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="ui vertical divider">
