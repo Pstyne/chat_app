@@ -1,28 +1,28 @@
-<form class="ui form">
-  <h1 class="ui center aligned header">
-    Sign up
-  </h1>
-  <div class="ui grid">
-    <div class="eight wide column">
+<h1 class="ui center aligned header">
+  Sign up
+</h1>
+<div class="ui grid">
+  <div class="eight wide column">
+    <%= form_with model: @user, class: "ui form" do |f| %>
       <div class="field">
-        <label>Username</label>
-        <input type="text" name="username" placeholder="Username">
+        <%= f.label :username %>
+        <%= f.text_field :username, placeholder: "Username" %>
       </div>
       <div class="field">
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password">
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: "Password" %>
       </div>
       <div class="field">
-        <label>Confirm Password</label>
-        <input type="password" name="confirm-password" placeholder="Confirm Password">
+        <%= f.label :confirm_password %>
+        <%= f.password_field :confirm_password, placeholder: "Confirm Password" %>
       </div>
-      <button class="ui red fluid button" type="submit">Submit</button>
-    </div>
-    <div class="eight wide column">
-      <h2 class="ui center aligned icon header">
-        <i class="circular red coffee icon"></i>
-        Sign up for chattyness
-      </h2>
-    </div>
+      <%= f.submit "Submit", class: "ui red fluid button" %>
+    <% end %>
   </div>
-</form>
+  <div class="eight wide column">
+    <h2 class="ui center aligned icon header">
+      <i class="circular red coffee icon"></i>
+      Sign up for chattyness
+    </h2>
+  </div>
+</div>
