@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Account created successfully"
       session[:user_id] = @user.id
-      cookies.encrypted[:user_id] = user.id
+      cookies.encrypted[:user_id] = @user.id
       redirect_to root_path
     else
       render "new"
