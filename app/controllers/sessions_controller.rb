@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      cookies.encrypted[:user_id] = user.id
       flash[:success] = "Successfully logged in"
       redirect_to root_path
     else
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    cookies.encrypted[:user_id] = nil
     flash[:success] = "Successfully logged out"
     redirect_to login_path
   end

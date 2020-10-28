@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Account created successfully"
       session[:user_id] = @user.id
+      cookies.encrypted[:user_id] = user.id
       redirect_to root_path
     else
       render "new"
@@ -16,6 +17,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation)
+      params.require(:user).permit(:username, :password, :password_confirmation, :online)
     end
 end
